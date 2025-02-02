@@ -49,14 +49,22 @@ model = Sequential([
 ```
 This architecture was chosen because of its effectiveness in handling the sequential nature of our air quality data.
 
-Results
+## Results
 Our model's performance was measured using the Root Mean Squared Error (RMSE). Here's how we calculated it:
 
 ```bash
 # Evaluate model performance
 rmse = np.sqrt(np.mean((y_true - y_pred) ** 2))
 ```
+The model's performance was evaluated using the Root Mean Squared Error (RMSE). Below are graphs:
+
+1. Comparing the predicted and actual values
+![image](https://github.com/user-attachments/assets/862d2532-2bde-4aaf-acff-40d0e0cf1e16)
+
+2. Showing the Final training loss against the loss on epochs
+![image](https://github.com/user-attachments/assets/8afe1b76-891c-4141-8c1d-a25c01040a79)
+
 The model showed good capability in predicting general trends in PM2.5 concentrations, although capturing sudden changes proved more difficult due to the volatile nature of pollution sources.
 
-Conclusion
+## Conclusion
 Working on this project was enlightening, showing how complex air quality forecasting can be. The LSTM model, after refinement through multiple experiments, was able to provide useful predictions for long-term trends in PM2.5 levels. The unpredictability of short-term pollution spikes remains a challenge. Future work could explore integrating additional data sources or experimenting with alternative model structures to enhance prediction accuracy. Remember, this project not only aids in understanding air quality but also contributes to broader environmental health initiatives.
