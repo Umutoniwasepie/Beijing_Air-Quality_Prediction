@@ -15,12 +15,13 @@ Before diving into modeling, I prepared our data with the following steps:
 - Data Cleaning: Missing values were addressed by filling them with the mean of each respective column, maintaining the consistency of our time series.
 - Normalization: We normalized our features using StandardScaler to ensure all variables contributed equally to the model, avoiding any bias from different scales.
 
-python
+```bash
 from sklearn.preprocessing import StandardScaler
 
 # Normalize the data
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(df)
+```
 
 These steps were crucial to make our LSTM model work efficiently with the data.
 
@@ -33,7 +34,7 @@ Model Summary:
 - BatchNormalization: This helps in stabilizing the learning process by normalizing the inputs to each layer.
 - A Dense layer
 
-python
+```bash 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Bidirectional, LSTM, Dense, BatchNormalization
 
@@ -45,16 +46,16 @@ model = Sequential([
         BatchNormalization(),
         Dense(1)
     ])
-
+```
 This architecture was chosen because of its effectiveness in handling the sequential nature of our air quality data.
 
 Results
 Our model's performance was measured using the Root Mean Squared Error (RMSE). Here's how we calculated it:
 
-python
+```bash
 # Evaluate model performance
 rmse = np.sqrt(np.mean((y_true - y_pred) ** 2))
-
+```
 The model showed good capability in predicting general trends in PM2.5 concentrations, although capturing sudden changes proved more difficult due to the volatile nature of pollution sources.
 
 Conclusion
