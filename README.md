@@ -49,6 +49,9 @@ model = Sequential([
 ```
 This architecture was chosen because of its effectiveness in handling the sequential nature of our air quality data.
 
+## Experiments
+I did a totla of 16 experiments and submitted 15 of them on kaggle, with the best one having a RMSE of **61.91** , the experimentation process comprised of many parameter tuning, feature engineering and Model changes, all this is well documented in my report and the notebook.
+
 ## Results
 Our model's performance was measured using the Root Mean Squared Error (RMSE). Here's how we calculated it:
 
